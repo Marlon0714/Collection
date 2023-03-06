@@ -1,4 +1,16 @@
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
 public class Banco implements IBanco {
+
+    HashSet<Cliente> listaClientes = new HashSet<Cliente>();
+
+    TreeSet<Empleado> listaEmpleados = new TreeSet<Empleado>();
+
+    HashMap<Integer,Cuenta> listaCuentas = new HashMap<>();
+
     @Override
     public void consultarSaldoCuenta() {
 
