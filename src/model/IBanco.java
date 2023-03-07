@@ -1,3 +1,5 @@
+package model;
+
 public interface IBanco {
     void consultarSaldoCuenta();
     void crearEmpleado();
