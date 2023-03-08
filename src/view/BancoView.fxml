@@ -10,7 +10,6 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <TabPane fx:id="tabCuenta" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
@@ -74,8 +73,10 @@
                                     <TextField layoutX="189.0" layoutY="23.0" promptText="Telefono" />
                                     <TextField layoutX="189.0" layoutY="50.0" promptText="Correo" />
                                     <TextField layoutX="189.0" layoutY="79.0" promptText="Fecha de nacimiento" />
-                                    <Button layoutX="189.0" layoutY="111.0" mnemonicParsing="false" text="Añadir " />
+                                    <Button layoutX="189.0" layoutY="111.0" mnemonicParsing="false" text="Añadir Empleaado" />
                                     <Label layoutX="14.0" layoutY="6.0" text="Añadir Empleado" />
+                                    <TextField fx:id="txtCodigo" layoutX="360.0" layoutY="23.0" promptText="Codigo" />
+                                    <TextField fx:id="txtSalario" layoutX="360.0" layoutY="50.0" promptText="Salario" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="598.0">
@@ -119,7 +120,7 @@
                                     <TextField layoutX="189.0" layoutY="50.0" promptText="Correo" />
                                     <TextField layoutX="189.0" layoutY="79.0" promptText="Fecha de nacimiento" />
                                     <Button layoutX="189.0" layoutY="111.0" mnemonicParsing="false" text="Añadir " />
-                                    <Label layoutX="14.0" layoutY="6.0" text="Añadir Cliente" />
+                                    <Label layoutX="14.0" layoutY="6.0" text="Añadir Cuenta" />
                                  </children>
                               </AnchorPane>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="598.0">
@@ -151,38 +152,17 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <SplitPane dividerPositions="0.3875338753387534" layoutX="1.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="600.0">
+                        <SplitPane layoutX="1.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="600.0">
                            <items>
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="598.0">
                                  <children>
-                                    <TextField layoutX="14.0" layoutY="23.0" promptText="Nombre" />
-                                    <TextField layoutX="14.0" layoutY="50.0" promptText="Apellido" />
-                                    <TextField layoutX="14.0" layoutY="79.0" promptText="Cedula" />
-                                    <TextField layoutX="14.0" layoutY="111.0" promptText="Direccion" />
-                                    <TextField layoutX="189.0" layoutY="23.0" promptText="Telefono" />
-                                    <TextField layoutX="189.0" layoutY="50.0" promptText="Correo" />
-                                    <TextField layoutX="189.0" layoutY="79.0" promptText="Fecha de nacimiento" />
-                                    <Button layoutX="189.0" layoutY="111.0" mnemonicParsing="false" text="Añadir " />
-                                    <Label layoutX="14.0" layoutY="6.0" text="Añadir Cliente" />
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="598.0">
-                                 <children>
-                                    <TableView layoutX="-1.0" layoutY="42.0" prefHeight="181.0" prefWidth="600.0">
-                                       <columns>
-                                          <TableColumn prefWidth="99.0" text="Nombre" />
-                                          <TableColumn prefWidth="82.0" text="Apellido" />
-                                          <TableColumn prefWidth="64.0" text="Cedula" />
-                                          <TableColumn prefWidth="102.0" text="Direccion" />
-                                          <TableColumn prefWidth="79.0" text="Telefono" />
-                                          <TableColumn prefWidth="103.0" text="Correo" />
-                                          <TableColumn prefWidth="70.0" text="Fecha de Nacimiento" />
-                                       </columns>
-                                    </TableView>
-                                    <TextField layoutX="14.0" layoutY="14.0" promptText="Buscar Cliente" />
-                                    <Button layoutX="182.0" layoutY="14.0" mnemonicParsing="false" text="Buscar" />
-                                    <Button layoutX="280.0" layoutY="14.0" mnemonicParsing="false" text="Eliminar" />
-                                    <Button layoutX="415.0" layoutY="14.0" mnemonicParsing="false" text="Actualizar" />
+                                    <TextField fx:id="txtfechaTransaccion" layoutX="14.0" layoutY="56.0" promptText="Fecha" />
+                                    <Button fx:id="btnTransaccion" layoutX="182.0" layoutY="207.0" mnemonicParsing="false" text="Hacer Transaccion" />
+                                    <TextField fx:id="txtHoraTransaccion" layoutX="14.0" layoutY="108.0" promptText="Hora" />
+                                    <TextField fx:id="txtValorTransaccion" layoutX="182.0" layoutY="56.0" promptText="Valor" />
+                                    <TextField fx:id="txtCuentaDestino" layoutX="182.0" layoutY="108.0" promptText="Cuenta Destino" />
+                                    <TextField fx:id="txtCuentaOrigen" layoutX="355.0" layoutY="56.0" promptText="Cuenta Origen" />
+                                    <Label layoutX="14.0" layoutY="14.0" text="Hacer Transaccion" />
                                  </children>
                               </AnchorPane>
                            </items>

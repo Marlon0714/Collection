@@ -5,6 +5,7 @@ import java.util.HashMap;
 public class Cuenta implements ICuenta {
     private String numeroCuenta;
     private double saldo;
+    public Cliente clienteAsociado;
     HashMap<Integer,Transaccion> listaTransacciones= new HashMap<>();
     void crearTransaccion(){
 
