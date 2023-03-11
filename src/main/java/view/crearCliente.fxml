@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" type="AnchorPane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.crearUsuarioController">
+   <children>
+      <TabPane fx:id="tabCuenta" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab fx:id="tabCliente" text="Cliente">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane layoutX="1.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="600.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="598.0">
+                                 <children>
+                                    <TextField fx:id="txtNombre" layoutX="8.0" layoutY="67.0" promptText="Nombre" />
+                                    <TextField fx:id="txtApellido" layoutX="8.0" layoutY="120.0" promptText="Apellido" />
+                                    <TextField fx:id="txtCedula" layoutX="8.0" layoutY="172.0" promptText="Cedula" />
+                                    <TextField fx:id="txtDireccion" layoutX="8.0" layoutY="232.0" promptText="Direccion" />
+                                    <TextField fx:id="txtTelefono" layoutX="189.0" layoutY="67.0" promptText="Telefono" />
+                                    <TextField fx:id="txtCorreo" layoutX="369.0" layoutY="67.0" promptText="Correo" />
+                                    <TextField fx:id="txtFecha" layoutX="189.0" layoutY="120.0" promptText="Fecha de nacimiento" />
+                                    <Button fx:id="btnCrear" layoutX="236.0" layoutY="232.0" mnemonicParsing="false" text="Crear Usuario" />
+                                    <Label layoutX="14.0" layoutY="6.0" text="Añadir Cliente" />
+                                    <TextField fx:id="txtUsuario" layoutX="189.0" layoutY="172.0" promptText="Usuario" />
+                                    <PasswordField fx:id="txtContraseña" layoutX="369.0" layoutY="172.0" promptText="Contraseña" />
+                                 </children>
+                              </AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</fx:root>
