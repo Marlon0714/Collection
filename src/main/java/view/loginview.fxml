@@ -20,12 +20,12 @@
                             </font>
                         </Label>
                         <Pane layoutX="94.0" layoutY="55.0" prefHeight="2.0" prefWidth="66.0" style="-fx-background-color: #00ff46;" />
-                        <PasswordField fx:id="passwordTextField" layoutX="53.0" layoutY="129.0" promptText="Contraseña" style="-fx-background-color: #212121; -fx-border-color: #00ff46; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #ffffff;">
+                        <PasswordField fx:id="passwordTextField" layoutX="53.0" layoutY="129.0" promptText="Codigo Empleado" style="-fx-background-color: #212121; -fx-border-color: #00ff46; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #ffffff;">
                             <font>
                                 <Font name="Tahoma Bold" size="12.0" />
                             </font>
                         </PasswordField>
-                        <TextField fx:id="usernameTextField" layoutX="53.0" layoutY="80.0" promptText="Nombre de Usuario" style="-fx-background-color: #212121; -fx-border-color: #00ff46; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #ffffff;">
+                        <TextField fx:id="usernameTextField" layoutX="53.0" layoutY="80.0" promptText="Cedula" style="-fx-background-color: #212121; -fx-border-color: #00ff46; -fx-text-fill: #ffffff; -fx-prompt-text-fill: #ffffff;">
                             <font>
                                 <Font name="Tahoma Bold" size="12.0" />
                             </font>

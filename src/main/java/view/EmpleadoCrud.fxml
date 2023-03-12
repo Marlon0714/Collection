@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BancoController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EmpleadoCrudController">
    <children>
       <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
          <children>
@@ -24,16 +25,22 @@
                         <TextField fx:id="txtTelefonoEmpleado" layoutX="189.0" layoutY="23.0" promptText="Telefono" />
                         <TextField fx:id="txtCorreoEmpleado" layoutX="189.0" layoutY="50.0" promptText="Correo" />
                         <TextField fx:id="txtFechaEmpleado" layoutX="189.0" layoutY="79.0" promptText="Fecha de nacimiento" />
-                        <Button fx:id="btnAniadirEmpleado" layoutX="189.0" layoutY="111.0" mnemonicParsing="false" text="Añadir Empleado" />
+                        <Button fx:id="btnAniadirEmpleado" layoutX="189.0" layoutY="111.0" mnemonicParsing="false" onAction="#actionCrear" text="Añadir Empleado" />
                         <Label layoutX="14.0" layoutY="6.0" text="Añadir Empleado" />
                         <TextField fx:id="txtCodigo" layoutX="360.0" layoutY="23.0" promptText="Codigo" />
                         <TextField fx:id="txtSalario" layoutX="360.0" layoutY="50.0" promptText="Salario" />
-                        <ComboBox layoutX="360.0" layoutY="79.0" prefWidth="150.0" />
+                        <MenuButton fx:id="mBtnTipoEmpleado" layoutX="360.0" layoutY="79.0" mnemonicParsing="false" text="MenuButton">
+                          <items>
+                            <MenuItem fx:id="miGerente" mnemonicParsing="false" text="Gerente" />
+                            <MenuItem fx:id="miAsesor" mnemonicParsing="false" text="Asesor de Ventas" />
+                              <MenuItem fx:id="miCajero" mnemonicParsing="false" text="Cajero" />
+                          </items>
+                        </MenuButton>
                      </children>
                   </AnchorPane>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="223.0" prefWidth="598.0">
                      <children>
-                        <TableView layoutX="-1.0" layoutY="42.0" prefHeight="181.0" prefWidth="600.0">
+                        <TableView fx:id="tableViewEmpleados" layoutX="-1.0" layoutY="42.0" prefHeight="181.0" prefWidth="600.0">
                            <columns>
                               <TableColumn fx:id="columnNombreEmpleado" prefWidth="99.0" text="Nombre" />
                               <TableColumn fx:id="columnApellidoEmpleado" prefWidth="82.0" text="Apellido" />
