@@ -12,6 +12,7 @@ public class BancoController {
     private static Persona usuarioLogueado;
 
     public static void iniciarSesion(String cedula, String codigo) {
+        iniciarDatos();
         Iterator<Empleado> iteratorEmpleados = banco.getListaEmpleados().iterator();
         Iterator<Cliente> iteratorCliente = banco.getListaClientes().iterator();
         while (iteratorEmpleados.hasNext()){
@@ -44,6 +45,7 @@ public class BancoController {
         return SingletonHolder.eINSTANCE;
     }
     public BancoController() {
+        iniciarDatos();
         cargarResourceXML();
         if(banco == null){
             System.out.println("es null");
@@ -51,7 +53,10 @@ public class BancoController {
             guardarResourceXML(banco);
         }
     }
-
+    public static void iniciarDatos(){
+        banco.crearEmpleado("Gerente","Juan","Perez","123","casa1","12345","corrreo1","fecha1","1",200);
+        banco.crearCliente("Pepe","López","321","casa2","1234567","correo2","fecha3");
+    }
     private static void guardarResourceXML(Banco banco) {
         Persistencia.guardarRecursoXML(banco);
     }

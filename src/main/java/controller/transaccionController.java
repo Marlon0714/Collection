@@ -34,7 +34,7 @@ public class transaccionController {
 
     @FXML
     void depositarAction(ActionEvent event) {
-        
+
     }
 
     @FXML
