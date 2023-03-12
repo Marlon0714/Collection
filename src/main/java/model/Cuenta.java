@@ -1,5 +1,6 @@
 package model;
 
+import javax.swing.*;
 import java.util.HashMap;
 
 public class Cuenta implements ICuenta {
@@ -64,6 +65,7 @@ public class Cuenta implements ICuenta {
     @Override
     public void retirarDinero(double valor) {
         if (valor < 0 && saldo >= valor) {
+            JOptionPane.showMessageDialog(null, "No tienes suficiente dinero");
             return;
         }
         saldo -= valor;
@@ -72,6 +74,7 @@ public class Cuenta implements ICuenta {
     @Override
     public void depositarDinero(double valor) {
         if (valor < 0) {
+            JOptionPane.showMessageDialog(null, "Dinero depositado con exito");
             return;
         }
         saldo += valor;

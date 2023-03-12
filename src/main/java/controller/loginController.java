@@ -16,6 +16,7 @@ import model.Gerente;
 
 import javax.swing.*;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
 
 public class loginController {
@@ -75,11 +76,17 @@ public class loginController {
     }
 
     @FXML
-    void actionCrearUser(ActionEvent event){
-
+    void actionCrearUser(ActionEvent event) throws IOException {
+        URL url = new File("src/main/java/view/crearCliente.fxml").toURI().toURL();
+        Parent root1 = FXMLLoader.load(url);
+        Scene scene1 = new Scene(root1, 600, 400);
+        Stage stage1 = new Stage();
+        stage1.setTitle("Crear usuario");
+        stage1.setScene(scene1);
+        stage1.show();
     }
     private void validarFields() throws Exception {
-        if(usernameTextField.getText().equals("") || passwordTextField.getText().equals("")){
+        if(usernameTextField.getText().equals("")){
             throw new Exception("Algun campo esta vacio");
         }
     }

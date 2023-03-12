@@ -2,41 +2,63 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.transaccionController">
+<AnchorPane xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <TabPane fx:id="tabCuenta" layoutX="10.0" layoutY="10.0" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE">
-         <tabs>
-            <Tab fx:id="tabTransaccion" text="Transacción">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+      <AnchorPane layoutX="10.0" layoutY="10.0" prefHeight="607.0" prefWidth="726.0">
+         <children>
+            <SplitPane layoutX="6.0" layoutY="10.0" orientation="VERTICAL" prefHeight="587.0" prefWidth="708.0">
+               <items>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="249.0" prefWidth="706.0">
                      <children>
-                        <SplitPane layoutX="1.0" orientation="VERTICAL" prefHeight="371.0" prefWidth="600.0">
-                           <items>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="143.0" prefWidth="598.0">
-                                 <children>
-                                    <TextField fx:id="txtfechaTransaccion" layoutX="14.0" layoutY="56.0" promptText="Fecha" />
-                                    <Button fx:id="btnTransaccion" layoutX="182.0" layoutY="207.0" mnemonicParsing="false" onAction="#actionTransaccion" text="Hacer Transaccion" />
-                                    <TextField fx:id="txtHoraTransaccion" layoutX="14.0" layoutY="108.0" promptText="Hora" />
-                                    <TextField fx:id="txtValorTransaccion" layoutX="182.0" layoutY="56.0" promptText="Valor" />
-                                    <TextField fx:id="txtCuentaDestino" layoutX="182.0" layoutY="108.0" promptText="Cuenta Destino" />
-                                    <TextField fx:id="txtCuentaOrigen" layoutX="355.0" layoutY="56.0" promptText="Cuenta Origen" />
-                                    <Label layoutX="14.0" layoutY="14.0" text="Hacer Transacción" />
-                                 </children>
-                              </AnchorPane>
-                           </items>
-                        </SplitPane>
+                        <Label layoutX="263.0" layoutY="2.0" text="Registro de transacciones" textFill="#041417">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <Separator layoutX="23.0" layoutY="26.0" prefHeight="0.0" prefWidth="656.0" />
+                        <Label layoutX="34.0" layoutY="48.0" text="N° Cuenta:" textFill="#041417">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtCodigoTransaccion" layoutX="119.0" layoutY="49.0" prefHeight="26.0" prefWidth="179.0" promptText="Ingrese el numero de la cuenta" />
+                        <TextField fx:id="txtValorTransaccion" layoutX="399.0" layoutY="50.0" prefHeight="25.0" prefWidth="274.0" promptText="Ingrese el valor de la transaccion" />
+                        <Label layoutX="351.0" layoutY="50.0" text="Valor:" textFill="#041417">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="34.0" layoutY="118.0" text="Fecha:" textFill="#041417">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="217.0" layoutY="113.0" text="Hora:" textFill="#041417">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <TextField fx:id="txtHoraTransaccion" layoutX="260.0" layoutY="110.0" prefHeight="25.0" prefWidth="136.0" promptText="Ingrese la hora (h:m)" />
+                        <Label layoutX="412.0" layoutY="112.0" textFill="#041417">
+                           <font>
+                              <Font name="System Bold" size="15.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="btnRetirar" layoutX="263.0" layoutY="186.0" mnemonicParsing="false" onAction="#retirarAction" prefHeight="61.0" prefWidth="154.0" text="Retirar " textFill="#00215e" />
+                        <Button fx:id="btnDepositar" layoutX="78.0" layoutY="186.0" mnemonicParsing="false" onAction="#depositarAction" prefHeight="61.0" prefWidth="154.0" text="Depositar" textFill="#00215e" />
+                        <Button fx:id="btnConsultar" layoutX="455.0" layoutY="183.0" mnemonicParsing="false" onAction="#consultarAction" prefHeight="61.0" prefWidth="161.0" text="Consultar " textFill="#00215e" />
+                        <TextField fx:id="txtFechaTransaccion" layoutX="87.0" layoutY="116.0" prefHeight="26.0" prefWidth="122.0" promptText="Ingrese la fecha" />
                      </children>
                   </AnchorPane>
-               </content>
-            </Tab>
-         </tabs>
-      </TabPane>
+               </items>
+            </SplitPane>
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

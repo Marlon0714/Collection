@@ -3,26 +3,23 @@ package controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
 import javafx.scene.control.TextField;
 
 public class transaccionController {
 
     @FXML
-    private Button btnTransaccion;
+    private Button btnConsultar;
 
     @FXML
-    private TabPane tabCuenta;
+    private Button btnDepositar;
 
     @FXML
-    private Tab tabTransaccion;
+    private Button btnRetirar;
 
     @FXML
-    private TextField txtCuentaDestino;
-
+    private TextField txtCodigoTransaccion;
     @FXML
-    private TextField txtCuentaOrigen;
+    private TextField txtFechaTransaccion;
 
     @FXML
     private TextField txtHoraTransaccion;
@@ -31,10 +28,24 @@ public class transaccionController {
     private TextField txtValorTransaccion;
 
     @FXML
-    private TextField txtfechaTransaccion;
+    void consultarAction(ActionEvent event) {
+        BancoController.banco.consultarSaldoCuenta(txtCodigoTransaccion.getText(),txtFechaTransaccion.getText(), txtHoraTransaccion.getText());
+    }
 
     @FXML
-    void actionTransaccion(ActionEvent event){
+    void depositarAction(ActionEvent event) {
+        
+    }
+
+    @FXML
+    void retirarAction(ActionEvent event) {
 
     }
+
+    private void validarFields() throws Exception {
+        if(txtValorTransaccion.getText().equals("") && txtCodigoTransaccion.getText().equals("")){
+            throw new Exception("Algun campo esta vacio");
+        }
+    }
+
 }
