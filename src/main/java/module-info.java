@@ -1,6 +1,8 @@
 module application {
     requires javafx.controls;
     requires javafx.fxml;
+    requires java.desktop;
+    requires java.logging;
 
     opens application to javafx.fxml;
     exports application;

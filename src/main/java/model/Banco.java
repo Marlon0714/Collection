@@ -205,4 +205,36 @@ public class Banco implements IBanco {
 
         }
     }
+
+    public HashSet<Cliente> getListaClientes() {
+        return listaClientes;
+    }
+
+    public void setListaClientes(HashSet<Cliente> listaClientes) {
+        this.listaClientes = listaClientes;
+    }
+
+    public TreeSet<Empleado> getListaEmpleados() {
+        return listaEmpleados;
+    }
+
+    public void setListaEmpleados(TreeSet<Empleado> listaEmpleados) {
+        this.listaEmpleados = listaEmpleados;
+    }
+
+    public HashMap<String, Cuenta> getListaCuentas() {
+        return listaCuentas;
+    }
+
+    public void setListaCuentas(HashMap<String, Cuenta> listaCuentas) {
+        this.listaCuentas = listaCuentas;
+    }
+
+    public HashMap<String, Transaccion> getListaTransacciones() {
+        return listaTransacciones;
+    }
+
+    public void setListaTransacciones(HashMap<String, Transaccion> listaTransacciones) {
+        this.listaTransacciones = listaTransacciones;
+    }
 }
