@@ -1,7 +1,10 @@
-module com.example {
+module application {
     requires javafx.controls;
     requires javafx.fxml;
 
-    opens com.example to javafx.fxml;
-    exports com.example;
+    opens application to javafx.fxml;
+    exports application;
+    opens controller to javafx.fxml;
+    exports controller;
+    exports model;
 }

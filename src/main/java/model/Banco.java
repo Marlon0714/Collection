@@ -170,4 +170,39 @@ public class Banco implements IBanco {
             }
         }
     }
+    @Override
+    public void crearCuenta(String nombre, String apellido, String cedula, String direccion, String telefono, String correo, String fechaNacimiento) {
+        Persona nuevoCliente  = new Cliente(nombre, apellido, cedula, direccion, telefono, correo, fechaNacimiento);
+        listaClientes.add((Cliente) nuevoCliente);
+    }
+
+    @Override
+    public void actualizarCuenta(String nombre, String apellido, String cedula, String direccion, String telefono, String correo, String fechaNacimiento) {
+        Iterator<Cliente> iterator = listaClientes.iterator();
+        while (iterator.hasNext()) {
+            Cliente cliente = iterator.next();
+            if (cliente.getCedula().equals(cedula)) {
+                cliente.setNombre(nombre);
+                cliente.setApellido(apellido);
+                cliente.setCedula(cedula);
+                cliente.setTelefono(telefono);
+                cliente.setCorreo(correo);
+                cliente.setFechaNacimiento(fechaNacimiento);
+                break;
+            }
+        }
+    }
+
+    @Override
+    public void eliminarCuenta(String cedula) {
+        Iterator<Cliente> iterator = listaClientes.iterator();
+        while (iterator.hasNext()) {
+            Cliente cliente = iterator.next();
+            if(cliente.getCedula().equals(cedula)){
+                listaClientes.remove(cliente);
+                break;
+            }
+
+        }
+    }
 }

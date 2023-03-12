@@ -25,4 +25,10 @@ public interface IBanco {
     void retirarDineroCuenta(String numeroCuenta, String fecha, String hora, double valor);
 
     void depositarDineroCuenta(String numeroCuenta, String fecha, String hora, double valor);
+
+    void crearCuenta(String nombre, String apellido, String cedula, String direccion, String telefono, String correo, String fechaNacimiento);
+
+    void actualizarCuenta(String nombre, String apellido, String cedula, String direccion, String telefono, String correo, String fechaNacimiento);
+
+    void eliminarCuenta(String cedula);
 }
