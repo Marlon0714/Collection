@@ -1,7 +1,9 @@
 package model;
 
 public interface ICuenta {
-    void retirarDinero();
-    void depositarDinero();
-    void consultarSaldo();
+    void retirarDinero(double valor);
+
+    void depositarDinero(double valor);
+
+    double consultarSaldo();
 }
