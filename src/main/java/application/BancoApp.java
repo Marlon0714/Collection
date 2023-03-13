@@ -17,6 +17,8 @@ public class BancoApp extends Application {
         try {
             BancoController.getInstance();
             BancoController.iniciarDatos();
+            BancoController.guardarResourceXML();
+            BancoController.cargarResourceXML();
         }catch (Exception e){}
         URL url = new File("src/main/java/view/loginview.fxml").toURI().toURL();
         Parent root = FXMLLoader.load(url);

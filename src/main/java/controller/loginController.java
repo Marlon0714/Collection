@@ -42,7 +42,7 @@ public class loginController {
             validarFields();
             BancoController.iniciarSesion(usernameTextField.getText(), passwordTextField.getText());
             if(BancoController.getUsuarioLogeado() instanceof Gerente){
-                URL url = new File("src/main/java/view/AdminView.view").toURI().toURL();
+                URL url = new File("src/main/java/view/AdminView.fxml").toURI().toURL();
                 Parent root1 = FXMLLoader.load(url);
                 Scene scene1 = new Scene(root1, 804, 570);
                 Stage stage1 = new Stage();

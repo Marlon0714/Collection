@@ -1,4 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <java version="19.0.2" class="java.beans.XMLDecoder">
- <object class="model.Banco"/>
+ <object class="model.Banco" id="Banco0">
+  <void property="listaClientes">
+   <void method="add">
+    <object class="model.Cliente">
+     <void property="apellido">
+      <string>López</string>
+     </void>
+     <void property="cedula">
+      <string>321</string>
+     </void>
+     <void property="correo">
+      <string>correo2</string>
+     </void>
+     <void property="direccion">
+      <string>casa2</string>
+     </void>
+     <void property="fechaNacimiento">
+      <string>fecha3</string>
+     </void>
+     <void property="nombre">
+      <string>Pepe</string>
+     </void>
+     <void property="telefono">
+      <string>1234567</string>
+     </void>
+    </object>
+   </void>
+  </void>
+  <void property="listaEmpleados">
+   <void method="add">
+    <object class="model.Gerente">
+     <void property="apellido">
+      <string>Perez</string>
+     </void>
+     <void property="cedula">
+      <string>123</string>
+     </void>
+     <void property="codigo">
+      <string>1</string>
+     </void>
+     <void property="correo">
+      <string>corrreo1</string>
+     </void>
+     <void property="direccion">
+      <string>casa1</string>
+     </void>
+     <void property="fechaNacimiento">
+      <string>fecha1</string>
+     </void>
+     <void property="nombre">
+      <string>Juan</string>
+     </void>
+     <void property="salario">
+      <double>200.0</double>
+     </void>
+     <void property="telefono">
+      <string>12345</string>
+     </void>
+    </object>
+   </void>
+  </void>
+ </object>
 </java>
