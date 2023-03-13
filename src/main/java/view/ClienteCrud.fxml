@@ -40,10 +40,8 @@
                               <TableColumn fx:id="columnFecha" prefWidth="70.0" text="Fecha de Nacimiento" />
                            </columns>
                         </TableView>
-                        <TextField fx:id="txtBuscar" layoutX="14.0" layoutY="14.0" promptText="Buscar Cliente" />
-                        <Button fx:id="btnBuscar" layoutX="182.0" layoutY="14.0" mnemonicParsing="false" text="Buscar" />
-                        <Button fx:id="btnEliminar" layoutX="280.0" layoutY="14.0" mnemonicParsing="false" text="Eliminar" />
-                        <Button fx:id="btnActualizar" layoutX="415.0" layoutY="14.0" mnemonicParsing="false" text="Actualizar" />
+                        <Button fx:id="btnBuscar" layoutX="388.0" layoutY="14.0" mnemonicParsing="false" onAction="#actionRecargar" text="Actualizar" />
+                        <Button fx:id="btnEliminar" layoutX="280.0" layoutY="14.0" mnemonicParsing="false" onAction="#actionEliminar" text="Eliminar" />
                      </children>
                   </AnchorPane>
                </items>

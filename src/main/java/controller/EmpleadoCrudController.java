@@ -7,8 +7,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
+import model.Cliente;
 import model.Empleado;
 
+import javax.swing.*;
 import java.awt.event.ActionEvent;
 
 public class EmpleadoCrudController {
@@ -23,6 +25,7 @@ public class EmpleadoCrudController {
     @FXML // fx:id="btnBuscarEmpleado"
     private Button btnBuscarEmpleado; // Value injected by FXMLLoader
 
+    private Empleado empleadoSeleccion;
     @FXML // fx:id="btnEliminarEmpleado"
     private Button btnEliminarEmpleado; // Value injected by FXMLLoader
 
@@ -91,28 +94,6 @@ public class EmpleadoCrudController {
     @FXML
     private MenuItem miGerente;
 
-    @FXML
-    void actionCrear(ActionEvent event){
-        String nombre = txtNombreEmpleado.getText();
-        String apellido = txtApellidoEmpleado.getText();
-        String telefono =txtTelefonoEmpleado.getText();
-        String cedula = txtCedulaEmpleado.getText();
-        String direccion = txtDireccionEmpleado.getText();
-        String codigo = txtCodigo.getText();
-        double salario =Double.parseDouble(txtSalario.getText());
-        String email = txtCorreoEmpleado.getText();
-        String fechaNacimiento =txtFechaEmpleado.getText();
-        String tipo = mBtnTipoEmpleado.getText();
-
-        if(datosValidos(nombre,apellido,cedula,direccion,telefono,email,fechaNacimiento,codigo,salario)){
-            BancoController.banco.crearEmpleado(tipo,nombre,apellido,cedula,direccion,telefono,email,fechaNacimiento,codigo,salario);
-            mostrarMensaje("Notificaión","El Empleado se ha añadido","El Empleado se añadió correctamente");
-        }else {
-            mostrarMensaje("Error","Error", "No se pudo");
-        }
-        BancoController.guardarResourceXML();
-        BancoController.cargarResourceXML();
-    }
 
     private void mostrarMensaje(String titulo,String header,String contenido)  {
         Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -203,10 +184,6 @@ public class EmpleadoCrudController {
         assert txtSalario != null : "fx:id=\"txtSalario\" was not injected: check your FXML file 'EmpleadoCrud.fxml'.";
         assert txtTelefonoEmpleado != null : "fx:id=\"txtTelefonoEmpleado\" was not injected: check your FXML file 'EmpleadoCrud.fxml'.";
 
-
-        this.tableViewEmpleados.setItems(oListaEmpleados);
-
-
         loadTable();
 
     }
@@ -221,6 +198,14 @@ public class EmpleadoCrudController {
         oListaEmpleados.clear();
         oListaEmpleados.addAll(BancoController.banco.getListaEmpleados());
         tableViewEmpleados.setItems(oListaEmpleados);
+
+
+        tableViewEmpleados.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if(newSelection != null){
+                empleadoSeleccion = newSelection;
+
+            }
+    });
     }
 
 
@@ -238,9 +223,31 @@ public class EmpleadoCrudController {
         String tipo = mBtnTipoEmpleado.getText();
 
 
+        if(datosValidos(nombre,apellido,cedula,direccion,telefono,email,fechaNacimiento,codigo,salario)){
+            BancoController.banco.crearEmpleado(tipo,nombre,apellido,cedula,direccion,telefono,email,fechaNacimiento,codigo,salario);
+            mostrarMensaje("Notificaión","El Empleado se ha añadido","El Empleado se añadió correctamente");
+        }else {
+            mostrarMensaje("Error","Error", "No se pudo");
+        }
+        BancoController.guardarResourceXML();
+        BancoController.cargarResourceXML();
 
-        BancoController.banco.crearEmpleado(tipo,nombre,apellido,cedula,direccion,telefono,email,fechaNacimiento,codigo,salario);
     }
+    @FXML
+    void actionEliminar(javafx.event.ActionEvent event) {
+        try {
+            Empleado empleado = tableViewEmpleados.getSelectionModel().getSelectedItem();
+            BancoController.banco.eliminarCliente(empleado.getCedula());
+            JOptionPane.showMessageDialog(null, "Cliente eliminado");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Hubo un error en el sistema");
 
-
+        }
+    }
+    @FXML
+    void actionRecargar(javafx.event.ActionEvent event) {
+        oListaEmpleados.clear();
+        oListaEmpleados.addAll(BancoController.banco.getListaEmpleados());
+        tableViewEmpleados.setItems(oListaEmpleados);
+    }
 }

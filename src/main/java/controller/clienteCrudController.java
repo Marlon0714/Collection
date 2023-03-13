@@ -1,5 +1,6 @@
 package controller;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -11,6 +12,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import model.Cliente;
+
+import javax.swing.*;
 
 public class clienteCrudController {
 
@@ -85,6 +88,8 @@ public class clienteCrudController {
     @FXML
     private TextField txtTelefono;
 
+    private Cliente clienteSeleccion;
+
     @FXML
     void crearCliente(ActionEvent event) {
         String nombre = txtNombre.getText();
@@ -108,10 +113,34 @@ public class clienteCrudController {
         columnApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
         columnCedula.setCellValueFactory(new PropertyValueFactory<>("cedula"));
         columnTelefono.setCellValueFactory(new PropertyValueFactory<>("telefono"));
+        columnDireccion.setCellValueFactory(new PropertyValueFactory<>("direccion"));
+        columnCorreo.setCellValueFactory(new PropertyValueFactory<>("correo"));
+        columnFecha.setCellValueFactory(new PropertyValueFactory<>("fecha"));
 
         oListaClientes.clear();
         oListaClientes.addAll(BancoController.banco.getListaClientes());
         tablaCliente.setItems(oListaClientes);
+
+        tablaCliente.getSelectionModel().selectedItemProperty().addListener((obs, oldSelection, newSelection) -> {
+            if(newSelection != null){
+                clienteSeleccion = newSelection;
+
+            }
+        });
+    }
+
+    @FXML
+    void actionEliminar(ActionEvent event) {
+        try {
+            Cliente cliente = tablaCliente.getSelectionModel().getSelectedItem();
+            BancoController.banco.eliminarCliente(cliente.getCedula());
+            JOptionPane.showMessageDialog(null, "Cliente eliminado");
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Hubo un error en el sistema");
+
+        }
+        BancoController.guardarResourceXML();
+        BancoController.cargarResourceXML();
     }
 
 
@@ -193,6 +222,12 @@ public class clienteCrudController {
 
 
         return false;
+    }
+    @FXML
+    void actionRecargar(ActionEvent event) {
+        oListaClientes.clear();
+        oListaClientes.addAll(BancoController.banco.getListaClientes());
+        tablaCliente.setItems(oListaClientes);
     }
 
 }

@@ -29,7 +29,7 @@
                         <Label layoutX="14.0" layoutY="6.0" text="Añadir Empleado" />
                         <TextField fx:id="txtCodigo" layoutX="360.0" layoutY="23.0" promptText="Codigo" />
                         <TextField fx:id="txtSalario" layoutX="360.0" layoutY="50.0" promptText="Salario" />
-                        <MenuButton fx:id="mBtnTipoEmpleado" layoutX="360.0" layoutY="79.0" mnemonicParsing="false" text="MenuButton">
+                        <MenuButton fx:id="mBtnTipoEmpleado" layoutX="360.0" layoutY="79.0" mnemonicParsing="false" text="Tipo Empleado">
                           <items>
                             <MenuItem fx:id="miGerente" mnemonicParsing="false" text="Gerente" />
                             <MenuItem fx:id="miAsesor" mnemonicParsing="false" text="Asesor de Ventas" />
@@ -50,10 +50,8 @@
                               <TableColumn fx:id="columnSalario" prefWidth="112.0" text="Salario" />
                            </columns>
                         </TableView>
-                        <TextField fx:id="txtBuscarEmpleado" layoutX="14.0" layoutY="14.0" promptText="Codigo Empleado" />
-                        <Button fx:id="btnBuscarEmpleado" layoutX="182.0" layoutY="14.0" mnemonicParsing="false" text="Buscar" />
-                        <Button fx:id="btnEliminarEmpleado" layoutX="280.0" layoutY="14.0" mnemonicParsing="false" text="Eliminar" />
-                        <Button fx:id="btnActualizarEmpleado" layoutX="415.0" layoutY="14.0" mnemonicParsing="false" text="Actualizar" />
+                        <Button fx:id="btnEliminarEmpleado" layoutX="280.0" layoutY="14.0" mnemonicParsing="false" onAction="#actionEliminar" text="Eliminar" />
+                        <Button fx:id="btnActualizarEmpleado" layoutX="415.0" layoutY="14.0" mnemonicParsing="false" onAction="#actionRecargar" text="Actualizar" />
                      </children>
                   </AnchorPane>
                </items>

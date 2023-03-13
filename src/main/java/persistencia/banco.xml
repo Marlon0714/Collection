@@ -5,6 +5,31 @@
    <void method="add">
     <object class="model.Cliente">
      <void property="apellido">
+      <string>Velez</string>
+     </void>
+     <void property="cedula">
+      <string>456</string>
+     </void>
+     <void property="correo">
+      <string>2</string>
+     </void>
+     <void property="direccion">
+      <string>a</string>
+     </void>
+     <void property="fechaNacimiento">
+      <string>12</string>
+     </void>
+     <void property="nombre">
+      <string>Jesus</string>
+     </void>
+     <void property="telefono">
+      <string>1</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="model.Cliente">
+     <void property="apellido">
       <string>López</string>
      </void>
      <void property="cedula">
@@ -24,6 +49,56 @@
      </void>
      <void property="telefono">
       <string>1234567</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="model.Cliente">
+     <void property="apellido">
+      <string>López</string>
+     </void>
+     <void property="cedula">
+      <string>321</string>
+     </void>
+     <void property="correo">
+      <string>correo2</string>
+     </void>
+     <void property="direccion">
+      <string>casa2</string>
+     </void>
+     <void property="fechaNacimiento">
+      <string>fecha3</string>
+     </void>
+     <void property="nombre">
+      <string>Pepe</string>
+     </void>
+     <void property="telefono">
+      <string>1234567</string>
+     </void>
+    </object>
+   </void>
+   <void method="add">
+    <object class="model.Cliente">
+     <void property="apellido">
+      <string>padilla</string>
+     </void>
+     <void property="cedula">
+      <string>6</string>
+     </void>
+     <void property="correo">
+      <string>3</string>
+     </void>
+     <void property="direccion">
+      <string>d</string>
+     </void>
+     <void property="fechaNacimiento">
+      <string>g</string>
+     </void>
+     <void property="nombre">
+      <string>gerardo</string>
+     </void>
+     <void property="telefono">
+      <string>2</string>
      </void>
     </object>
    </void>
