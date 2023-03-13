@@ -7,7 +7,7 @@ import java.util.Iterator;
 
 public class BancoController {
 
-    static Banco banco = new Banco();
+    static Banco banco = null;
 
     private static Persona usuarioLogueado;
 
@@ -45,9 +45,9 @@ public class BancoController {
         return SingletonHolder.eINSTANCE;
     }
     public BancoController() {
-        iniciarDatos();
         cargarResourceXML();
         if(banco == null){
+            iniciarDatos();
             System.out.println("es null");
             banco = new Banco();
             guardarResourceXML();

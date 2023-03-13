@@ -2,7 +2,6 @@ package persistencia;
 
 import java.beans.*;
 import java.io.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Calendar;

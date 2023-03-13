@@ -2,8 +2,10 @@ package persistencia;
 
 import model.Banco;
 
+import java.io.File;
+
 public class Persistencia {
-    public static final String RUTA_ARCHIVO_MODELO_BANCO_XML = "src/main/java/persistencia/banco.xml";
+    public static final String RUTA_ARCHIVO_MODELO_BANCO_XML = new File("src/main/java/persistencia/banco.xml").getAbsolutePath();
 
     public static Banco cargarRecursoXML() {
         Banco banco = null;
