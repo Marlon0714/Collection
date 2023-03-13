@@ -1,6 +1,8 @@
 package model;
 
-public class Cajero extends Empleado {
+import java.io.Serializable;
+
+public class Cajero extends Empleado implements Serializable {
     public Cajero() {
     }
 

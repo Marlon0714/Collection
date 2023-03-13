@@ -100,7 +100,8 @@ public class clienteCrudController {
         }else {
             mostrarMensaje("Error","Error", "No se pudo");
         }
-
+        BancoController.guardarResourceXML();
+        BancoController.cargarResourceXML();
     }
     private void loadTable(){
         columnNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));

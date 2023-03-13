@@ -1,6 +1,8 @@
 package model;
 
-public class AsesorVentas extends Empleado{
+import java.io.Serializable;
+
+public class AsesorVentas extends Empleado implements Serializable {
     public AsesorVentas() {
     }
 

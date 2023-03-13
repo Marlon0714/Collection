@@ -1,6 +1,8 @@
 package model;
 
-public class ConsultaSaldo extends Transaccion{
+import java.io.Serializable;
+
+public class ConsultaSaldo extends Transaccion implements Serializable {
     public ConsultaSaldo() {
     }
 

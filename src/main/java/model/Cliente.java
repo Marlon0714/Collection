@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Cliente extends Persona{
+public class Cliente extends Persona implements Serializable {
     HashMap<Integer,Cuenta> listaCuentasCliente = new HashMap<>();
 
     public Cliente() {

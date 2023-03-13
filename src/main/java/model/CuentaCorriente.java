@@ -1,6 +1,8 @@
 package model;
 
-public class CuentaCorriente extends Cuenta{
+import java.io.Serializable;
+
+public class CuentaCorriente extends Cuenta implements Serializable {
     public CuentaCorriente() {
     }
 

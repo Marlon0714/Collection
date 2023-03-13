@@ -110,7 +110,8 @@ public class EmpleadoCrudController {
         }else {
             mostrarMensaje("Error","Error", "No se pudo");
         }
-
+        BancoController.guardarResourceXML();
+        BancoController.cargarResourceXML();
     }
 
     private void mostrarMensaje(String titulo,String header,String contenido)  {

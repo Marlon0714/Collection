@@ -1,8 +1,9 @@
 package model;
 
+import java.io.Serializable;
 import java.util.*;
 
-public class Banco implements IBanco {
+public class Banco implements IBanco, Serializable {
 
     HashSet<Cliente> listaClientes = new HashSet<>();
 

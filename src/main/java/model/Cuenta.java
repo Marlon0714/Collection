@@ -1,9 +1,10 @@
 package model;
 
 import javax.swing.*;
+import java.io.Serializable;
 import java.util.HashMap;
 
-public class Cuenta implements ICuenta {
+public class Cuenta implements ICuenta, Serializable {
     private String numeroCuenta;
     private double saldo;
     public Cliente clienteAsociado;

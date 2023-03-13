@@ -1,6 +1,8 @@
 package model;
 
-public class Empleado extends Persona implements Comparable{
+import java.io.Serializable;
+
+public class Empleado extends Persona implements Comparable, Serializable {
 
     private String codigo;
     private double salario;

@@ -50,18 +50,18 @@ public class BancoController {
         if(banco == null){
             System.out.println("es null");
             banco = new Banco();
-            guardarResourceXML(banco);
+            guardarResourceXML();
         }
     }
     public static void iniciarDatos(){
         banco.crearEmpleado("Gerente","Juan","Perez","123","casa1","12345","corrreo1","fecha1","1",200);
         banco.crearCliente("Pepe","López","321","casa2","1234567","correo2","fecha3");
     }
-    private static void guardarResourceXML(Banco banco) {
+    public static void guardarResourceXML() {
         Persistencia.guardarRecursoXML(banco);
     }
 
-    private static void cargarResourceXML() {
+    public static void cargarResourceXML() {
         banco = Persistencia.cargarRecursoXML();
     }
 

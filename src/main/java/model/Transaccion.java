@@ -1,6 +1,8 @@
 package model;
 
-public class Transaccion {
+import java.io.Serializable;
+
+public class Transaccion implements Serializable {
     private String fecha;
     private String hora;
     private double valor;
